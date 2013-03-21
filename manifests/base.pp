@@ -1,3 +1,7 @@
+stage { 'first': 
+  before => Stage['main'],
+}
+
 node 'sensu-server' {
 
   class { 'sensu':
@@ -6,10 +10,8 @@ node 'sensu-server' {
     rabbitmq_port     => '5672',
     rabbitmq_host     => '192.168.50.4',
     subscriptions     => 'sensu-test',
-    require           => [
-      Class['redis'],
-      Class['rabbitmq::server'],
-    ]
+    client_name       => 'server',
+    require           => Class['rabbitmq::server'],
   }
 
   sensu::check { 'check_success':
@@ -46,6 +48,7 @@ node 'sensu-server' {
 
   class { 'redis':
     version => '2.6.5',
+    stage   => first,
   }
 
 }
@@ -56,5 +59,6 @@ node 'sensu-client' {
     rabbitmq_port     => '5672',
     rabbitmq_host     => '192.168.50.4',
     subscriptions     => 'sensu-test',
+    client_name       => 'client'
   }
 }
