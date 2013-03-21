@@ -35,7 +35,8 @@ Vagrant basebox image. See the Vagrant documentation for more
 information about managing the Vagrant created virtual machines.
 
 All being well, everything should run cleaning and if you visit localhost:8080 you
-should see the sensu dashboard.
+should see the sensu dashboard. The username for the basic
+authentication is admin and the password secret.
 
 ## Thanks
 
