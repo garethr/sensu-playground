@@ -1,3 +1,5 @@
 .vagrant
 modules/*/*
 .librarian
+/.tmp
+/Puppetfile.lock
