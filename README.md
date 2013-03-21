@@ -38,6 +38,17 @@ All being well, everything should run cleaning and if you visit localhost:8080 y
 should see the sensu dashboard. The username for the basic
 authentication is admin and the password secret.
 
+## A quick example
+
+The check setup by the puppet manifest checks for the existence of a
+file at /tmp/missingfile every 60 seconds. To start with these files
+will be missing, so you should see a warning in the web interface. If
+you jump on the virtual machine and create the file the warning should
+eventually disappear.
+
+    vagrant ssh server
+    touch /tmp/missingfile
+
 ## Thanks
 
 This repository mainly packages other peoples work:

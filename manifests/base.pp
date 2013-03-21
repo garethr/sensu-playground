@@ -15,13 +15,13 @@ node 'sensu-server' {
   }
 
   sensu::check { 'check_success':
-    command     => 'echo "success"',
+    command     => 'test -e /tmp/missingfile',
     handlers    => 'default',
     subscribers => 'sensu-test',
   }
 
   sensu::handler { 'default':
-    command => 'mail -s \'sensu alert\' your@address',
+    command => 'echo "sensu alert" >> /tmp/sensu.log',
   }
 
   class { 'rabbitmq::server':
