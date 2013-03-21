@@ -24,7 +24,7 @@ Librarian-puppet allows for managing puppet modules from the
 [Forge](http://forge.puppetlabs.com) or from Git repositories. To
 install the required third-party puppet modules run:
 
-    bundle exec librarian-puppet
+    bundle exec librarian-puppet install
 
 Finally to bring up the two node sensu cluster run:
 
