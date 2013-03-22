@@ -3,7 +3,7 @@ architecture. It's a simple idea, a small code base and provides
 lots of ways of extensing the core featureset. What's not to like?
 
 This repo contains a Sensu demo environment. Using
-[Vagrant](http://vagrantup.com) and the
+[Vagrant](http://vagrantup.com) 1.1+ and the
 [sensu-puppet](https://github.com/sensu/sensu-puppet) module it brings up two nodes, one of which runs the
 sensu server and dashboard, and the other a sensu client. On it's own
 it's not very exciting, but it's a great way to have something running
@@ -24,7 +24,7 @@ Librarian-puppet allows for managing puppet modules from the
 [Forge](http://forge.puppetlabs.com) or from Git repositories. To
 install the required third-party puppet modules run:
 
-    bundle exec librarian-puppet
+    bundle exec librarian-puppet install
 
 Finally to bring up the two node sensu cluster run:
 
